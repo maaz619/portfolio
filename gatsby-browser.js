@@ -1,7 +1,10 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+require("./src/styles/global.css")
+// const React = require("react")
+// const { Provider } = require("react-redux")
 
-// You can delete this file if you're not using it
+// const store = require("./src/store/store")
+
+// exports.wrapRootElement = ({ element }) => {
+//   return <Provider store={store}>{element}</Provider>
+// }
+export { default as wrapRootElement } from "./src/store/store"
