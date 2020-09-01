@@ -31,10 +31,10 @@ const IndexPage = ({ setOpen, isOpen }) => {
   const [currentWidth, setWidth] = React.useState(window.innerWidth)
 
   React.useEffect(() => {
-    if (typeof window === "undefined") {
+    if (typeof window !== "undefined") {
       window.addEventListener("resize", () => setWidth(window.innerWidth))
     }
-    if (typeof window === "undefined") {
+    if (typeof window !== "undefined") {
       return () => {
         window.removeEventListener("resize", () => setWidth(window.innerWidth))
       }
