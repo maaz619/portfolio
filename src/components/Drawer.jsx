@@ -1,10 +1,10 @@
 import React from "react"
 import { Drawer } from "@material-ui/core"
 import styled from "styled-components"
-import { Home, GitHub } from "@material-ui/icons"
+import CustomDrawer from "../components/CustomDrawer"
 
 const MainDiv = styled.div`
-  width: 350px;
+  width: 300px;
 `
 const Profile = styled.div`
   height: 150px;
@@ -14,7 +14,15 @@ const Profile = styled.div`
   padding: 20px;
   background: purple;
 `
-
+const drawerStyle = {
+  top: "0",
+  height: "100vh",
+  zIndex: "1200",
+  position: "sticky",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+}
 const HeaderDrawer = props => {
   const h1style = {
     padding: "15px",
@@ -23,10 +31,9 @@ const HeaderDrawer = props => {
     alignItems: "center",
   }
   return (
-    <Drawer variant="persistent" anchor="left" open={props.onopen}>
+    <Drawer variant="temporary" anchor="left" open={props.isOpen}>
       <MainDiv>
-        <Profile>Avatar</Profile>
-        <button onClick={props.onclose}>Fold</button>
+        {/* <Profile>Avatar</Profile>
         <h2 style={h1style}>
           <Home style={{ paddingRight: "5px" }} />
           Home
@@ -38,7 +45,12 @@ const HeaderDrawer = props => {
         <h1 style={h1style}>Projects</h1>
         <h1 style={h1style}>Education</h1>
         <h1 style={h1style}>List</h1>
-        <h1 style={h1style}>List</h1>
+        <h1 style={h1style}>List</h1> */}
+        <div style={drawerStyle}>
+          <div style={{ padding: "20px" }}>
+            <CustomDrawer />
+          </div>
+        </div>
       </MainDiv>
     </Drawer>
   )

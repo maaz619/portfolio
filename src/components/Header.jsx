@@ -18,19 +18,17 @@ const Headerlink = styled(Link)`
   padding: 15px;
 `
 
-const Header = () => {
+const Header = ({ setOpen }) => {
   const menu = {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     width: "85%",
   }
-  // const handleClick = () => {
-  //   setOpen(true)
-  // }
-  // const handleClose = () => {
-  //   setOpen(false)
-  // }
+  const handleClick = () => {
+    setOpen(true)
+  }
+
   return (
     <HeaderContainer>
       <div style={menu}>
@@ -40,7 +38,7 @@ const Header = () => {
           </span>
         </Headerlink>
         <Headerlink to="/about">
-          <span style={{ color: "grey" }}>Contact</span>
+          <span style={{ color: "black" }}>Contact</span>
         </Headerlink>
       </div>
     </HeaderContainer>
