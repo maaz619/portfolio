@@ -8,6 +8,7 @@ import HeaderDrawer from "../components/Drawer"
 import { connect } from "react-redux"
 import { setOpen } from "../store/action"
 import { Menu } from "@material-ui/icons"
+import window from "global"
 
 const Mainapp = styled.div`
   height: 100vh;
@@ -30,9 +31,10 @@ const IndexPage = ({ setOpen, isOpen }) => {
   const [currentWidth, setWidth] = React.useState(window.innerWidth)
 
   React.useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window === "undefined") {
       window.addEventListener("resize", () => setWidth(window.innerWidth))
-
+    }
+    if (typeof window === "undefined") {
       return () => {
         window.removeEventListener("resize", () => setWidth(window.innerWidth))
       }
